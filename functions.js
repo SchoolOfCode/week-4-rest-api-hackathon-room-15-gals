@@ -30,3 +30,17 @@ export async function getAllLyrics() {
   
     return found;
   }
+
+  export async function addLyrics(lyric, song, album, release_date) {
+    const newLyrics = {
+      lyric,
+      song,
+      album,
+      release_date,
+      id: uuidv4(),
+    }
+    const lyrics = await readLyrics();
+    lyrics.push(newLyrics);
+    await writeLyrics(lyrics);
+    return newLyrics;
+}

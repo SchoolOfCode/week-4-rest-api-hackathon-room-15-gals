@@ -7,7 +7,7 @@ index.use(express.json()); // // Middleware to parse incoming JSON requests and 
 const PORT = 5000;
 
 import {getAllLyrics,
-  getLyricsByID, 
+  getLyricsByID, addLyrics 
 } from "./functions.js";
 
 
@@ -24,6 +24,12 @@ index.get("/lyrics/:id", async function (req, res){
   const lyrics = await getLyricsByID(id);
   res.json(lyrics)
 } )
+
+index.post("/lyrics", async function (req, res){
+  const {lyric, song, album, release_date}= req.body;
+  const lyrics = await addLyrics(lyric, song, album, release_date);
+  res.json(lyrics);
+})
 
 index.get("/", function (req, res) {
     res.send("Welcome to the inspirational Taylor Swift quotes API");
