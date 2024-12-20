@@ -1,6 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
+
 
 import { readLyrics, writeLyrics } from "./helpers.js";
+
+import { v4 as uuidv4 } from "uuid";
+
+
 
 
 //we need a async function to retrieve our lyrics data from taylor.json

@@ -2,6 +2,8 @@ import { promises as fs } from "node:fs";
 
 import { FILEPATH } from "./config.js";
 
+  
+
 // We need a async function that can read the lyrics readLyrics()
 // Define the data variable to read the data from our taylor.json file and we will wait for this to be completed before executing the function
 // we want  to return data that is converted from JSON to JavaScript array. 

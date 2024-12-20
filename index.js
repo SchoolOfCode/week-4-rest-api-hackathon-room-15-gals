@@ -7,8 +7,10 @@ index.use(express.json()); // // Middleware to parse incoming JSON requests and 
 const PORT = 5000;
 
 import {getAllLyrics,
-  getLyricsByID,
+  getLyricsByID, 
 } from "./functions.js";
+
+
 
 
 index.get("/lyrics", async function (req, res) {
@@ -18,7 +20,7 @@ index.get("/lyrics", async function (req, res) {
 
 
 index.get("/lyrics/:id", async function (req, res){
-  const {id} = req.params.id 
+  const {id} = req.params
   const lyrics = await getLyricsByID(id);
   res.json(lyrics)
 } )
